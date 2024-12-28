@@ -1,94 +1,68 @@
 import { motion } from "framer-motion";
-
 import Navbar from "./components/navbar";
 import ScrollProgress from "./components/ui/scroll-progress";
+import TypingAnimation from "./components/ui/typing-animation";
+import Bubble from "./components/bubble";
+import { ChevronDown } from "lucide-react";
+
+const ScrollDown = () => (
+  <motion.div
+    className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center gap-2"
+    animate={{ y: [0, 10, 0] }}
+    transition={{
+      repeat: Infinity,
+      repeatType: "loop",
+      duration: 1.5,
+    }}
+  >
+    <ChevronDown className="text-black w-8 h-8 drop-shadow-md dark:text-white" />
+    <span className="text-black text-sm font-medium drop-shadow-md dark:text-white">
+      Scroll Down
+    </span>
+  </motion.div>
+);
 
 export default function App() {
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900">
+    <div className="bg-gradient-to-b from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900 relative">
       <ScrollProgress className="top-[65px]" />
       <Navbar />
       {/* Main Section */}
-      <section id="inicio" className="h-screen flex flex-col items-center justify-center text-center px-6">
-        <motion.h1
-          className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white"
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          Olá, eu sou{" "}
-          <span className="text-blue-500">[Patrick da Silva Almeida]</span>
-        </motion.h1>
-        <motion.p
-          className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mt-4"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-        >
-          Desenvolvedor Web apaixonado por criar experiências incríveis na web.
-        </motion.p>
-        <motion.div
-          className="mt-8 flex gap-4"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-        >
-          <a
-            href="#projetos"
-            className="px-6 py-3 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition"
-          >
-            Ver Projetos
-          </a>
-          <a
-            href="#contato"
-            className="px-6 py-3 border border-gray-800 dark:border-gray-200 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-          >
-            Entre em Contato
-          </a>
-        </motion.div>
-      </section>
-      {/* Fim Main Section */}
-
-      {/* Início About Section */}
-      <section id="sobre" className="h-screen flex items-center justify-center px-6">
-        <div className="flex w-full max-w-6xl gap-8">
-          {/* Texto à esquerda */}
-          <motion.div
-            className="flex flex-col justify-center text-left w-1/2"
+      <section className="w-full h-screen flex flex-col md:flex-row gap-8 items-center justify-center bg-white dark:bg-gray-900">
+        <div className="text-left mt-16 md:mt-0 text-black dark:text-white w-full px-6 md:w-1/2">
+          <motion.h3
+            className="text-lg mb-4"
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white">
-              Sobre mim
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mt-4">
-              Sou um desenvolvedor web com experiência em criar aplicações
-              incríveis usando as tecnologias mais modernas. Adoro desafios e
-              estou sempre em busca de aprender algo novo.
-            </p>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mt-4">
-              Tenho paixão por programação, design e criar experiências digitais
-              imersivas. Meu foco está em escrever código limpo e eficiente.
-            </p>
-          </motion.div>
+            Hello Word! 👋
+          </motion.h3>
 
-          {/* Imagem à direita */}
-          <motion.div
-            className="w-1/2"
-            initial={{ opacity: 0, x: 50 }}
+          <motion.h1
+            className="text-5xl font-bold leading-tight mb-6"
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <img
-              src="https://via.placeholder.com/400"
-              alt="Imagem do desenvolvedor"
-              className="w-full rounded-lg shadow-md"
-            />
+            My name is <span className="text-blue-500">Patrick Almeida</span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            <TypingAnimation className="text-2xl font-normal">
+              I'm a Web Developer
+            </TypingAnimation>
           </motion.div>
         </div>
+        <Bubble />
       </section>
-      {/* Fim About Section */}
+
+      {/* Scroll Down Indicator */}
+      <ScrollDown />
     </div>
   );
 }
