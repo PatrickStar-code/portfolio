@@ -3,6 +3,7 @@ import Navbar from "./components/navbar";
 import ScrollProgress from "./components/ui/scroll-progress";
 import AboutSection from "./components/aboutSection";
 import ProjectsSection from "./components/projectsSection";
+import ContactSection from "./components/contactSection";
 
 export default function App() {
   return (
@@ -11,7 +12,9 @@ export default function App() {
       <Navbar />
       <StartSection />
       <AboutSection />
+
       <ProjectsSection />
+      <ContactSection />
     </>
   );
 }

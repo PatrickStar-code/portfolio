@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function AboutSection() {
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
   return (
     <section
       id="about"
@@ -11,9 +14,10 @@ export default function AboutSection() {
         <motion.h2
           className="text-5xl font-extrabold  drop-shadow-md"
           initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -50 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          ref={ref}
         >
           About Patrick Star ⭐
         </motion.h2>
@@ -22,9 +26,10 @@ export default function AboutSection() {
         <motion.p
           className="text-lg  leading-relaxed"
           initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          ref={ref}
         >
           Patrick Star is not just a starfish; he’s a hilarious, carefree, and
           lovable character from Bikini Bottom. As SpongeBob's best friend,
@@ -50,6 +55,10 @@ export default function AboutSection() {
                 scale: 1.05,
                 rotate: 2,
               }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: inView ? 1 : 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              ref={ref}
             >
               <h3 className="text-xl font-bold text-gray-600">{item.title}</h3>
               <p className="mt-2 text-gray-700">{item.fact}</p>
