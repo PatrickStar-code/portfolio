@@ -132,7 +132,8 @@ export default function Safari({
         {imageSrc && (
           <image
             href={imageSrc}
-            width="1200"
+            width="1200
+"
             height="700"
             x="1"
             y="52"

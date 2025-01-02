@@ -4,26 +4,28 @@ import { useInView } from "react-intersection-observer";
 // import ProjectShowCaseTeste from "./ProjectShowCase";
 import MockupSafari from "./mockup";
 import InteractiveHoverButton from "./ui/interactive-hover-button";
+import { Button } from "./ui/button";
+import { GithubIcon } from "lucide-react";
 
 export interface IProject {
   image: string;
   title: string;
   description: string;
   link: string;
-  url: string;
   technologies: string[];
+  gitHubUrl: string;
 }
 
 // Dados dos projetos
 const ProjectArrayList: IProject[] = [
   {
-    image: "https://via.placeholder.com/150",
-    title: "Project 1",
+    image: "/images/notebookly.png",
+    title: "Notebookly",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    link: "#",
-    url: "#",
-    technologies: ["React", "Tailwind", "TypeScript"],
+      "Notebookly é um projeto que simula um diário digital. O objetivo é permitir que o usuário crie cadernos e notas, podendo registrar seus sentimentos e pensamentos em cada nota criada.",
+    link: "https://notebookly.vercel.app/Main",
+    gitHubUrl: "https://github.com/PatrickStar-code/notebookly",
+    technologies: ["Next", "Tailwind", "TypeScript", "Prisma", "NextAuth"],
   },
   {
     image: "https://via.placeholder.com/150",
@@ -31,7 +33,7 @@ const ProjectArrayList: IProject[] = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     link: "#",
-    url: "#",
+    gitHubUrl: "https://github.com/yourusername/project2",
     technologies: [
       "React",
       "Tailwind",
@@ -48,7 +50,10 @@ export default function ProjectsSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="w-full min-h-screen py-16 px-8 flex flex-col items-center">
+    <div
+      className="w-full min-h-screen py-16 px-8 flex flex-col items-center dark:bg-gray-800"
+      id="projetos"
+    >
       <motion.h2
         className="text-4xl font-extrabold text-gray-900 dark:text-white mb-12"
         initial={{ opacity: 0 }}
@@ -72,7 +77,7 @@ export default function ProjectsSection() {
             ref={ref}
           >
             <div className="flex justify-center items-center w-full md:w-1/2 h-98 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-              <MockupSafari url={project.url} imageSrc={project.image} />
+              <MockupSafari url={project.link} imageSrc={project.image} />
             </div>
 
             <div className="flex flex-col w-full md:w-1/2 text-center md:text-left">
@@ -92,8 +97,23 @@ export default function ProjectsSection() {
                   </span>
                 ))}
               </div>
-              <div>
-                <InteractiveHoverButton text="Acessar" />
+              <div className="flex gap-4  items-baseline">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <InteractiveHoverButton text="Acessar" />
+                </a>
+                <a
+                  href={project.gitHubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button>
+                    <GithubIcon />
+                  </Button>
+                </a>
               </div>
             </div>
           </motion.div>

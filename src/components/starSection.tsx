@@ -4,8 +4,11 @@ import Bubble from "./bubble";
 
 export default function StartSection() {
   return (
-    <section className="w-full h-screen flex flex-col md:flex-row gap-8 items-center justify-center ">
-      <div className="text-left mt-16 md:mt-0 text-black dark:text-white w-full px-6 md:w-1/2">
+    <section
+      className="w-full h-screen flex flex-col md:flex-row gap-8 items-center dark:bg-gray-800 justify-center "
+      id="inicio"
+    >
+      <div className="text-left mt-24 md:mt-0 text-black dark:text-white dar w-full px-6 md:w-1/2">
         <motion.h3
           className="text-lg mb-4"
           initial={{ opacity: 0, y: -50 }}
@@ -21,7 +24,8 @@ export default function StartSection() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          My name is <span className="text-blue-500">Patrick Almeida</span>
+          Meu nome é{" "}
+          <span className="text-blue-500">Patrick da Silva Almeida</span>
         </motion.h1>
 
         <motion.div
@@ -30,7 +34,7 @@ export default function StartSection() {
           transition={{ delay: 0.2, duration: 0.6 }}
         >
           <TypingAnimation className="text-2xl font-normal">
-            I'm a Web Developer
+            Sou Desenvolvedor Web Full Stack.
           </TypingAnimation>
         </motion.div>
       </div>

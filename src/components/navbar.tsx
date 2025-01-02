@@ -1,26 +1,31 @@
 // Importações necessárias
-import { motion } from 'framer-motion';
-import { Menu, Sun, Moon } from 'lucide-react'; // Ícones de exemplo (substitua conforme necessário)
-import { useState, useEffect } from 'react';
+import { motion } from "framer-motion";
+import { Menu, Sun, Moon } from "lucide-react"; // Ícones de exemplo (substitua conforme necessário)
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
+  const WindownTheme = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+
   const [isOpen, setIsOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(WindownTheme);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const links = [
-    { name: 'Inicio', href: 'inicio' },
-    { name: 'Sobre', href: 'sobre' },
-    { name: 'Projetos', href: 'projetos' },
-    { name: 'Contato', href: 'contato' },
+    { name: "Inicio", href: "inicio" },
+    { name: "Sobre", href: "sobre" },
+    { name: "Projetos", href: "projetos" },
+    { name: "Contato", href: "contato" },
   ];
 
   useEffect(() => {
     const root = window.document.documentElement;
+
     if (isDarkMode) {
-      root.classList.add('dark');
+      root.classList.add("dark");
     } else {
-      root.classList.remove('dark');
+      root.classList.remove("dark");
     }
   }, [isDarkMode]);
 
@@ -28,9 +33,9 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -38,8 +43,8 @@ export default function Navbar() {
     <nav
       className={`fixed w-full transition-all duration-300 z-50 ${
         isScrolled
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur shadow-md'
-          : 'bg-transparent'
+          ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur shadow-md"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -49,7 +54,7 @@ export default function Navbar() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          MeuPortfólio
+          <a href="#inicio">PatrickStarCode</a>
         </motion.div>
 
         {/* Links grandes */}
@@ -68,7 +73,7 @@ export default function Navbar() {
           ))}
           {/* Botão de tema */}
           <motion.div
-            className="ml-4 relative w-12 h-6 flex items-center bg-gray-200 dark:bg-gray-800 rounded-full cursor-pointer"
+            className="ml-4 relative w-12 h-6 flex items-center bg-gray-200 dark:bg-gray-700 rounded-full cursor-pointer"
             onClick={() => setIsDarkMode(!isDarkMode)}
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
@@ -76,11 +81,15 @@ export default function Navbar() {
           >
             <motion.div
               className={`w-6 h-6 bg-white dark:bg-gray-900 rounded-full shadow-md flex items-center justify-center transform transition-transform ${
-                isDarkMode ? 'translate-x-6' : 'translate-x-0'
+                isDarkMode ? "translate-x-6" : "translate-x-0"
               }`}
               layout
             >
-              {isDarkMode ? <Moon size={16} className="text-blue-500" /> : <Sun size={16}  className="text-yellow-500"  />}
+              {isDarkMode ? (
+                <Moon size={16} className="text-blue-500" />
+              ) : (
+                <Sun size={16} className="text-yellow-500" />
+              )}
             </motion.div>
           </motion.div>
         </div>
@@ -96,11 +105,15 @@ export default function Navbar() {
           >
             <motion.div
               className={`w-6 h-6 bg-white dark:bg-gray-900 rounded-full shadow-md flex items-center justify-center transform transition-transform ${
-                isDarkMode ? 'translate-x-6' : 'translate-x-0'
+                isDarkMode ? "translate-x-6" : "translate-x-0"
               }`}
               layout
             >
-              {isDarkMode ? <Sun size={16} className="text-yellow-500" /> : <Moon size={16} className="text-blue-500" />}
+              {isDarkMode ? (
+                <Sun size={16} className="text-yellow-500" />
+              ) : (
+                <Moon size={16} className="text-blue-500" />
+              )}
             </motion.div>
           </motion.div>
           <button
@@ -117,7 +130,7 @@ export default function Navbar() {
         <motion.div
           className="md:hidden bg-white dark:bg-gray-900 shadow-md"
           initial={{ height: 0 }}
-          animate={{ height: 'auto' }}
+          animate={{ height: "auto" }}
           exit={{ height: 0 }}
         >
           <ul className="flex flex-col items-center gap-4 py-4">

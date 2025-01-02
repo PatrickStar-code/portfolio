@@ -1,78 +1,93 @@
-import { motion } from "framer-motion";
-import FormContact from "./formContact";
+import { Linkedin } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="mt-6">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }} // Ponto inicial da animação
-        whileInView={{ opacity: 1, y: 0 }} // Animação quando visível
-        transition={{ duration: 0.8, ease: "easeOut" }} // Configuração da animação
-        className="grid sm:grid-cols-2 h-full gap-12 p-8 mx-auto max-w-4xl bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md font-[sans-serif]"
-        viewport={{ once: true }} // A animação ocorre uma única vez ao entrar na tela
-      >
+    <section className="bg-white dark:bg-gray-800" id="contato">
+      <div className="container px-6 py-12 mx-auto">
         <div>
-          <h1 className="text-gray-800 text-3xl font-bold">Let's Talk</h1>
-          <p className="text-sm text-gray-500 mt-4">
-            Have some big idea or brand to develop and need help? Then reach out
-            we'd love to hear about your project and provide help.
+          <p className="font-medium text-blue-500 dark:text-blue-400">
+            Contate-me
           </p>
 
-          <div className="mt-12">
-            <h2 className="text-gray-800 text-base font-bold">Email</h2>
-            <ul className="mt-4">
-              <li className="flex items-center">
-                <div className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20px"
-                    height="20px"
-                    fill="#007bff"
-                    viewBox="0 0 479.058 479.058"
-                  >
-                    <path
-                      d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
-                      data-original="#000000"
-                    />
-                  </svg>
-                </div>
-                <a
-                  href="javascript:void(0)"
-                  className="text-[#007bff] text-sm ml-4"
-                >
-                  <small className="block">Mail</small>
-                  <strong>info@example.com</strong>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="mt-12">
-            <h2 className="text-gray-800 text-base font-bold">Socials</h2>
-
-            <ul className="flex mt-4 space-x-4">
-              <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <a href="javascript:void(0)">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20px"
-                    height="20px"
-                    fill="#007bff"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M6.812 13.937H9.33v9.312c0 .414.335.75.75.75l4.007.001a.75.75 0 0 0 .75-.75v-9.312h2.387a.75.75 0 0 0 .744-.657l.498-4a.75.75 0 0 0-.744-.843h-2.885c.113-2.471-.435-3.202 1.172-3.202 1.088-.13 2.804.421 2.804-.75V.909a.75.75 0 0 0-.648-.743A26.926 26.926 0 0 0 15.071 0c-7.01 0-5.567 7.772-5.74 8.437H6.812a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm.75-3.999h2.518a.75.75 0 0 0 .75-.75V6.037c0-2.883 1.545-4.536 4.24-4.536.878 0 1.686.043 2.242.087v2.149c-.402.205-3.976-.884-3.976 2.697v2.755c0 .414.336.75.75.75h2.786l-.312 2.5h-2.474a.75.75 0 0 0-.75.75V22.5h-2.505v-9.312a.75.75 0 0 0-.75-.75H7.562z"
-                      data-original="#000000"
-                    />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
+            Entre em contato
+          </h1>
         </div>
 
-        <FormContact />
-      </motion.div>
+        <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                />
+              </svg>
+            </span>
+
+            <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
+              Email
+            </h2>
+
+            <p className="mt-2 text-blue-500 dark:text-blue-400">
+              <a href="mailto:patrick.almeida06@gmail.com">
+                patrick.almeida06@gmail.com
+              </a>
+            </p>
+          </div>
+
+          <div>
+            <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+              <Linkedin />
+            </span>
+
+            <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
+              Linkedin
+            </h2>
+
+            <p className="mt-2 text-blue-500 dark:text-blue-400">
+              <a href="https://www.linkedin.com/in/patricksilvaalmeida/">
+                https://www.linkedin.com/in/patricksilvaalmeida/
+              </a>
+            </p>
+          </div>
+
+          <div>
+            <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                />
+              </svg>
+            </span>
+
+            <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
+              Phone
+            </h2>
+
+            <p className="mt-2 text-blue-500 dark:text-blue-400">
+              (32) 98844-4406
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
