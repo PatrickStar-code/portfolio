@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-// import ProjectShowcase from "./ProjectShowCase";
-// import ProjectShowCaseTeste from "./ProjectShowCase";
 import MockupSafari from "./mockup";
 import InteractiveHoverButton from "./ui/interactive-hover-button";
 import { Button } from "./ui/button";
@@ -28,12 +26,12 @@ const ProjectArrayList: IProject[] = [
     technologies: ["Next", "Tailwind", "TypeScript", "Prisma", "NextAuth"],
   },
   {
-    image: "https://via.placeholder.com/150",
+    image: "https://via.placeholder.com/1200x750",
     title: "Project 2",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    link: "#",
-    gitHubUrl: "https://github.com/yourusername/project2",
+    link: "https://via.placeholder.com/1200x750",
+    gitHubUrl: "https://via.placeholder.com/1200x750",
     technologies: [
       "React",
       "Tailwind",
@@ -45,8 +43,15 @@ const ProjectArrayList: IProject[] = [
   },
 ];
 
+// Configurações de animação reutilizáveis
+const motionConfig = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 },
+};
+
 // Componente Principal da Seção de Projetos
-export default function ProjectsSection() {
+export function ProjectsSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
@@ -71,12 +76,10 @@ export default function ProjectsSection() {
             className={`flex flex-col md:flex-row ${
               index % 2 === 0 ? "md:flex-row-reverse" : ""
             } items-center gap-8`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
+            {...motionConfig}
             ref={ref}
           >
-            <div className="flex justify-center items-center w-full md:w-1/2 h-98 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+            <div className="flex justify-center items-center w-full md:w-1/2 h-98 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform">
               <MockupSafari url={project.link} imageSrc={project.image} />
             </div>
 
@@ -97,11 +100,12 @@ export default function ProjectsSection() {
                   </span>
                 ))}
               </div>
-              <div className="flex gap-4  items-baseline">
+              <div className="flex gap-4 items-baseline mt-4">
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="transition-transform transform hover:scale-105"
                 >
                   <InteractiveHoverButton text="Acessar" />
                 </a>
@@ -109,6 +113,7 @@ export default function ProjectsSection() {
                   href={project.gitHubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="transition-transform transform hover:scale-105"
                 >
                   <Button>
                     <GithubIcon />
@@ -120,7 +125,6 @@ export default function ProjectsSection() {
         ))}
       </div>
 
-      {/* Espaçamento para separar as seções */}
       <div className="mt-16"></div>
     </div>
   );

@@ -7,5 +7,9 @@ export default function MockupSafari({
   url?: string;
   imageSrc?: string;
 }) {
-  return <Safari url={url} className="size-full" imageSrc={imageSrc} />;
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      <Safari url={url} className="size-full" imageSrc={imageSrc} />
+    </a>
+  );
 }

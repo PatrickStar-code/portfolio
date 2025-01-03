@@ -2,8 +2,8 @@ import StartSection from "./components/starSection";
 import Navbar from "./components/navbar";
 import ScrollProgress from "./components/ui/scroll-progress";
 import AboutSection from "./components/aboutSection";
-import ProjectsSection from "./components/projectsSection";
 import ContactSection from "./components/contactSection";
+import { ProjectsSection } from "./components/projectsSection";
 
 export default function App() {
   return (
