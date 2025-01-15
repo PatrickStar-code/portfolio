@@ -41,7 +41,7 @@ export default function Bubble() {
       >
         {/* Imagem dentro do contêiner */}
         <motion.img
-          src="https://placehold.co/400"
+          src="/images/me.jpg"
           alt="Imagem"
           className="rounded-full object-cover"
           style={{

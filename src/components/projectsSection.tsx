@@ -26,12 +26,12 @@ const ProjectArrayList: IProject[] = [
     technologies: ["Next", "Tailwind", "TypeScript", "Prisma", "NextAuth"],
   },
   {
-    image: "https://via.placeholder.com/1200x750",
-    title: "Project 2",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    link: "https://via.placeholder.com/1200x750",
-    gitHubUrl: "https://via.placeholder.com/1200x750",
+    image: "/images/LivroSaaS.png",
+    title: "LivroSaaS (Em Construção 🛠️)",
+    description: "Em Construção 🛠️.",
+    link: "https://livrosaas.vercel.app/",
+    gitHubUrl:
+      "https://github.com/PatrickStar-code/mp-saas-landing-page-com-nextjs",
     technologies: [
       "React",
       "Tailwind",

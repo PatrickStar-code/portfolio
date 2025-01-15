@@ -5,10 +5,10 @@ import Bubble from "./bubble";
 export default function StartSection() {
   return (
     <section
-      className="w-full h-screen flex flex-col md:flex-row gap-8 items-center dark:bg-gray-800 justify-center "
+      className="w-full h-screen flex flex-col md:flex-row gap-8 items-center dark:bg-gray-800 justify-center"
       id="inicio"
     >
-      <div className="text-left mt-24 md:mt-0 text-black dark:text-white dar w-full px-6 md:w-1/2">
+      <div className="text-left mt-24 md:mt-0 text-black dark:text-white w-full px-6 md:w-1/2">
         <motion.h3
           className="text-lg mb-4"
           initial={{ opacity: 0, y: -50 }}

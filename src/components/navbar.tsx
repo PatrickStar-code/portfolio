@@ -1,7 +1,7 @@
-// Importações necessárias
 import { motion } from "framer-motion";
-import { Menu, Sun, Moon } from "lucide-react"; // Ícones de exemplo (substitua conforme necessário)
+import { Menu, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link } from "react-scroll"; // Importando o Link do react-scroll
 
 export default function Navbar() {
   const WindownTheme = window.matchMedia(
@@ -60,16 +60,24 @@ export default function Navbar() {
         {/* Links grandes */}
         <div className="hidden md:flex gap-6 items-center">
           {links.map((item, index) => (
-            <motion.a
-              key={item.name}
-              href={`#${item.href}`}
-              className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              {item.name}
-            </motion.a>
+            <motion.div key={item.name}>
+              <Link
+                to={item.href} // Usando o Link do react-scroll para navegar suavemente
+                smooth={true}
+                duration={500}
+                offset={-70} // Ajusta a posição de scroll
+              >
+                <motion.a
+                  href={`#${item.href}`}
+                  className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {item.name}
+                </motion.a>
+              </Link>
+            </motion.div>
           ))}
           {/* Botão de tema */}
           <motion.div
@@ -136,13 +144,15 @@ export default function Navbar() {
           <ul className="flex flex-col items-center gap-4 py-4">
             {links.map((item) => (
               <li key={item.name}>
-                <a
-                  href={`#${item.href}`}
-                  className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </a>
+                <Link to={item.href} smooth={true} duration={500} offset={-70}>
+                  <a
+                    href={`#${item.href}`}
+                    className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                </Link>
               </li>
             ))}
           </ul>
