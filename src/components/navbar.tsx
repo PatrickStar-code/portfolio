@@ -118,9 +118,9 @@ export default function Navbar() {
               layout
             >
               {isDarkMode ? (
-                <Sun size={16} className="text-yellow-500" />
-              ) : (
                 <Moon size={16} className="text-blue-500" />
+              ) : (
+                <Sun size={16} className="text-yellow-500" />
               )}
             </motion.div>
           </motion.div>
