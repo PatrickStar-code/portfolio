@@ -9,7 +9,7 @@ import TerminalSection from "./components/ui/terminalSection";
 export default function App() {
   return (
     <>
-      <ScrollProgress className="top-[65px]" />
+      <ScrollProgress className="top-[62px]" />
       <Navbar />
       <StartSection />
       <AboutSection />
