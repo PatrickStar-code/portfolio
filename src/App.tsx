@@ -4,6 +4,7 @@ import ScrollProgress from "./components/ui/scroll-progress";
 import AboutSection from "./components/aboutSection";
 import ContactSection from "./components/contactSection";
 import { ProjectsSection } from "./components/projectsSection";
+import TerminalSection from "./components/ui/terminalSection";
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
       <Navbar />
       <StartSection />
       <AboutSection />
-
+      <TerminalSection />
       <ProjectsSection />
       <ContactSection />
     </>

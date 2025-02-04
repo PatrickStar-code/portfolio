@@ -25,6 +25,15 @@ const ProjectArrayList: IProject[] = [
     gitHubUrl: "https://github.com/PatrickStar-code/notebookly",
     technologies: ["Next", "Tailwind", "TypeScript", "Prisma", "NextAuth"],
   },
+  {
+    image: "/images/LivroSaaS.png",
+    title: "LivroSaaS (Em Construção 🛠️)",
+    description: "Em Construção 🛠️.",
+    link: "https://livrosaas.vercel.app/",
+    gitHubUrl:
+      "https://github.com/PatrickStar-code/mp-saas-landing-page-com-nextjs",
+    technologies: ["React", "Tailwind", "TypeScript", "Next.js"],
+  },
 ];
 
 // Configurações de animação reutilizáveis
