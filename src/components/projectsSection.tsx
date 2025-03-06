@@ -86,7 +86,10 @@ export function ProjectsSection() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <div className="w-full min-h-screen py-16 px-8 flex flex-col items-center dark:bg-gray-800">
+    <div
+      className="w-full min-h-screen py-16 px-8 flex flex-col items-center dark:bg-gray-800"
+      id="projetos"
+    >
       {/* Título com animação */}
       <motion.h1
         className="text-5xl font-extrabold text-gray-900 dark:text-white mb-12"
