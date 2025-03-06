@@ -5,6 +5,23 @@
 html {
   scroll-behavior: smooth;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ebf8ff; /* Azul claro */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3182ce; /* Azul forte */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c5282; /* Azul mais escuro ao passar o mouse */
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
