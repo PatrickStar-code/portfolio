@@ -15,7 +15,7 @@ export default function StartSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Hello Word! 👋
+          Hello World! 👋
         </motion.h3>
 
         <motion.h1
