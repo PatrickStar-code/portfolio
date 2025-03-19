@@ -6,6 +6,12 @@ export function TerminalDemo() {
       <TypingAnimation>&gt; pnpm dlx Conhecimentos init</TypingAnimation>
 
       <AnimatedSpan delay={1500} className="text-green-500">
+        <span>✔ Html</span>
+      </AnimatedSpan>
+      <AnimatedSpan delay={1500} className="text-green-500">
+        <span>✔ Css </span>
+      </AnimatedSpan>
+      <AnimatedSpan delay={1500} className="text-green-500">
         <span>✔ TypeScript</span>
       </AnimatedSpan>
 
@@ -30,7 +36,7 @@ export function TerminalDemo() {
       </AnimatedSpan>
 
       <AnimatedSpan delay={4500} className="text-green-500">
-        <span>✔ Python</span>
+        <span>✔ Java</span>
       </AnimatedSpan>
 
       <TypingAnimation delay={5000} className="text-muted-foreground">
