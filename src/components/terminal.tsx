@@ -38,6 +38,9 @@ export function TerminalDemo() {
       <AnimatedSpan delay={4500} className="text-green-500">
         <span>✔ Java</span>
       </AnimatedSpan>
+      <AnimatedSpan delay={4500} className="text-green-500">
+        <span>✔ Spring</span>
+      </AnimatedSpan>
 
       <TypingAnimation delay={5000} className="text-muted-foreground">
         Success! Conhecimentos técnicos carregados com sucesso.
