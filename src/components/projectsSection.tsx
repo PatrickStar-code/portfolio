@@ -43,6 +43,20 @@ const ProjectArrayList: IProject[] = [
     technologies: ["React", "Tailwind", "TypeScript"],
   },
   {
+    image: "/images/NewAcLandingPage.png",
+    title: " New AC LandingPage ",
+    description: "Modelo Reformulado da landing Page Antiga.",
+    link: "https://arthurcesarfotografia.vercel.app/",
+    gitHubUrl: "https://github.com/PatrickStar-code/arthurfotografia",
+    technologies: [
+      "React",
+      "Tailwind",
+      "TypeScript,",
+      "Next.js,",
+      "Framer Motion",
+    ],
+  },
+  {
     image: "/images/PixelSurvival.png",
     title: "PixelSurvival",
     description:
