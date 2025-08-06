@@ -57,6 +57,14 @@ const ProjectArrayList: IProject[] = [
     ],
   },
   {
+    image: "/images/GymLogApi.jpg",
+    title: "GymLog Api",
+    description: "API Completa para meu projeto GymLog.",
+    link: "https://github.com/PatrickStar-code/GymLogApi",
+    gitHubUrl: "https://github.com/PatrickStar-code/GymLogApi",
+    technologies: ["Spring Boot", "Java", "Spring Security", "PostgreSQL"],
+  },
+  {
     image: "/images/PixelSurvival.png",
     title: "PixelSurvival",
     description:
