@@ -5,6 +5,7 @@ import AboutSection from "./components/aboutSection";
 import ContactSection from "./components/contactSection";
 import { ProjectsSection } from "./components/projectsSection";
 import TerminalSection from "./components/ui/terminalSection";
+import JigSaw from "./components/jigSaw";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <TerminalSection />
       <ProjectsSection />
       <ContactSection />
+      <JigSaw />
     </main>
   );
 }
