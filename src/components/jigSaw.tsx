@@ -12,7 +12,7 @@ export default function JigSaw() {
     setTimeout(() => {
       setShowDialog(false);
     }, 3000);
-    window.location.href = "https://8bits-portifolio-snsa.vercel.app/";
+    window.location.href = "8bits-portifolio.vercel.app";
   }
 
   function handleNoClick() {
