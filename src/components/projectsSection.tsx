@@ -24,15 +24,6 @@ const ProjectArrayList: IProject[] = [
     gitHubUrl: "https://github.com/PatrickStar-code/notebookly",
     technologies: ["Next", "Tailwind", "TypeScript", "Prisma", "NextAuth"],
   },
-  {
-    image: "/images/MoveXpress.png",
-    title: "MoveXpress (Em Construção 🛠️)",
-    description: "Em Construção 🛠️.",
-    link: "",
-    gitHubUrl:
-      "https://github.com/PatrickStar-code/mp-saas-landing-page-com-nextjs",
-    technologies: ["React", "Tailwind", "TypeScript", "Next.js"],
-  },
 
   {
     image: "/images/AcLandingPage.png",
