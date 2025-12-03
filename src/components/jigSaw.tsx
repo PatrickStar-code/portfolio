@@ -25,11 +25,13 @@ export default function JigSaw() {
   return (
     <div>
       {/* Jigsaw no canto */}
+      <a href="https://8bits-portifolio.vercel.app">
       <img
         src="/images/Jigsaw.png"
         alt="Imagem do Jigsaw"
         className="fixed bottom-0 right-0 w-20 cursor-pointer"
       />
+      </a>
 
       {/* Balão de conversa */}
       {showDialog && (
